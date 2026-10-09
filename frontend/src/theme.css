@@ -31,4 +31,11 @@ a { color: inherit; text-decoration: none; }
 .auth-form { width: min(100%, 430px); display: grid; gap: 1rem; background: #fffdf7; padding: 2.5rem; border: 1px solid #d8cdbb; }
 .library-list { display: grid; gap: 1rem; }.library-item { display: flex; gap: 1rem; align-items: center; background: #fffdf7; padding: 1rem; border: 1px solid #e5dac6; }.library-item .book-card { display: flex; flex: 1; box-shadow: none; border: 0; }.library-item .cover { width: 80px; }.library-item .book-card > div:last-child { padding-top: 0; }
 .recommendation-list article { border-top: 1px solid #ded3c1; padding: 1.5rem 0; }
+.recommendation-card { display: grid; grid-template-columns: 150px 1fr; gap: 1.5rem; background: #fffdf7; border: 1px solid #e5dac6; padding: 1rem; margin: 1rem 0; }
+.recommendation-cover { aspect-ratio: 3 / 4; background: #d9c4a4; display: grid; place-items: center; overflow: hidden; color: #7a1f2b; font-size: 3rem; font-weight: 700; }
+.recommendation-cover img { width: 100%; height: 100%; object-fit: cover; }
+.recommendation-content h2 { margin-top: 0; }
+.recommendation-description { line-height: 1.55; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+.recommendation-reason { color: #7a1f2b; font-style: italic; }
 @media (max-width: 700px) { .site-nav .container { flex-wrap: wrap; gap: .75rem; }.site-nav .d-flex { flex-wrap: wrap; gap: .6rem !important; }.detail-layout { grid-template-columns: 1fr; }.cover-large { max-width: 220px; }.library-item { align-items: stretch; flex-wrap: wrap; }.library-item select { width: 100%; } }
+@media (max-width: 560px) { .recommendation-card { grid-template-columns: 90px 1fr; gap: 1rem; }.recommendation-content h2 { font-size: 1.35rem; } }
