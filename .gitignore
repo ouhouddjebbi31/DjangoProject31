@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+backend/.venv/
+
+# Secrets and local data
+.env
+backend/.env
+*.sqlite3
+backend/dataset/data/
+
+# Node
+node_modules/
+frontend/dist/
+
+# VS Code: keep shared workspace files
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/extensions.json
