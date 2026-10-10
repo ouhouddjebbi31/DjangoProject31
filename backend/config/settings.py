@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'library.apps.LibraryConfig',
     'recommendations.apps.RecommendationsConfig',
+    'chat.apps.ChatConfig',
 ]
 
 MIDDLEWARE = [
@@ -114,6 +115,12 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',
     'http://127.0.0.1:5173',
 ]
+
+GROQ_API_KEY = config('GROQ_API_KEY', default='')
+CHAT_MODEL = config('CHAT_MODEL', default='openai/gpt-oss-120b')
+CHAT_MAX_TOKENS = config('CHAT_MAX_TOKENS', default=600, cast=int)
+CHAT_TEMPERATURE = config('CHAT_TEMPERATURE', default=0.3, cast=float)
+CHAT_RATE_LIMIT = config('CHAT_RATE_LIMIT', default='20/hour')
 
 
 # Password validation

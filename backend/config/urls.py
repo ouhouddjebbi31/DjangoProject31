@@ -29,4 +29,5 @@ urlpatterns = [
     path('api/', include('books.urls')),
     path('api/', include('library.urls')),
     path('api/', include('recommendations.urls')),
+    path('api/', include('chat.urls')),
 ]

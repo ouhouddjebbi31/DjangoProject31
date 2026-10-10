@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getLibrary, updateLibrary, removeFromLibrary } from '../services/library'
 import { getRecommendations } from '../services/recommendations'
-import { useAuth } from '../context/AuthContext'
+import { useAuth } from '../context/useAuth'
 import BookCard from '../components/BookCard'
 import Spinner from '../components/Spinner'
 export function Library() { const [items, setItems] = useState(null); useEffect(() => { getLibrary().then((r) => setItems(r.data.results || r.data)) }, []); if (!items) return <main className="container py-5"><Spinner /></main>; return <main className="container py-5"><p className="eyebrow">Your shelves</p><h1>My library</h1><div className="library-list">{items.map((item) => <article key={item.id} className="library-item"><BookCard book={item.book_detail} /><select value={item.status} onChange={async (e) => { await updateLibrary(item.id, { status: e.target.value }); setItems(items.map((x) => x.id === item.id ? { ...x, status: e.target.value } : x)) }}><option value="WANT_TO_READ">Want to read</option><option value="READING">Reading</option><option value="READ">Read</option></select><button className="btn btn-sm btn-outline-danger" onClick={() => removeFromLibrary(item.id).then(() => setItems(items.filter((x) => x.id !== item.id)))}>Remove</button></article>)}</div></main> }
